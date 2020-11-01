@@ -1,0 +1,992 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+
+
+
+body,html{width:100%;height:100%;}
+*{box-sizing:border-box;}
+body{font:normal 16px/1em 'Libre Baskerville', serif;}
+header,nav,section,footer{display:block;}
+a{text-decoration:none;color:#333333;}
+ul,li,ol{list-style:none;}
+
+@keyframes flow{
+    0%{transform:translate(0);}
+    100%{transform:translate(-100%);}
+}
+
+@keyframes click_ani{
+	0%{color:#000000;}
+	25%{color:#ffffff;}
+	50%{color:#000000;}
+	75%{color:#ffffff;}
+}
+
+@keyframes arrow1{
+	0%{background-position:250px 0;}
+	40%{background-position:300px 0;}
+	80%{background-position:250px 0;}
+}
+
+@keyframes arrow2{
+	0%{background-position:80px 0;}
+	40%{background-position:150px 0;}
+	80%{background-position:80px 0;}
+}
+
+@keyframes arrow3{
+	0%{background-position:center top;}
+	80%{background-position:center 10px;}
+}
+/*공통*/
+#wrap{width:100%;height:100%;}
+
+
+
+@media all and (min-width:1200px){
+	#wrap{width:100%;min-width:1200px;height:100%;
+			position:relative;}
+	
+	/*상단*/
+	#top-wrap{position:absolute;top:0;left:0;width:100%;z-index:10;}
+	#top{width:95%;min-width:1200px;margin:0 auto;}
+	#top h1{float:left;width:125px;height:90px;text-align:center;line-height:140px;}
+	#top h1 img{width:70%;height:auto;}
+	
+	#menu-wrap{float:right;}
+	#menu-mobile{display:none;}
+	#menu-button{display:none;}
+	#menu{width:625px;float:left;}
+	
+	.close_btn{display:none;}
+	
+	#menu > ul > li{float:left;width:20%;height:90px;
+			text-align:center;line-height:90px;}
+	.plus_btn{display:none;}
+	#menu > ul > li > a{font-size:15px;
+				color:#ffffff;
+				font-weight:bold;}
+	#menu > ul > li > ul{width:140px;
+						line-height:2em;display:none;
+						text-align:left;
+						padding-left:20%;
+						background:linear-gradient(to bottom,rgba(162,158,154,0.7),rgba(255,255,255,0));;}
+	#menu > ul > li:nth-child(2) > ul{width:170px;font-family:'Nanum Myeongjo',serif;}
+    #menu > ul > li > ul > li{width:140px;}
+	#menu > ul > li > ul > li > a{color:#ffffff;font-size:14px;}
+	#menu > ul > li:hover > ul{display:block;}
+	#menu > ul > li > ul > li > a:hover{color:#000000;}
+	
+	#quickmenu-wrap{float:left;width:160px;height:90px;margin-right:40px;margin-left:40px;}
+	#quickmenu-wrap li{float:left;height:90px;
+						padding-top:25px;}
+	#quickmenu-wrap li a{width:100%;height:100%;display:block;}
+	
+	
+	
+	#contents_wrap{width:100%;min-width:1200px;}
+	
+/*	메인*/
+	#main{width:100%;min-width:1200px;height:auto;position:relative;}
+	#main::after{content:"";display:block;clear:both;}
+	#main img{width:100%;height:auto;}
+	#main ol{position:absolute;bottom:0;left:0;
+			width:100%;padding:0 2%;
+			margin-bottom:30px;}
+	#main ol li{width:32%;height:185px;float:left;
+				margin-right:1%;}
+
+	#main ol li:last-child{margin-right:0;}
+	#main ol li a{height:185px;display:block;
+					color:#cccccc;
+					position:relative;}
+	#main ol li a.selected{color:#000000;}
+	
+
+	
+	#main ol li a h2{font-size:30px;font-weight:bold;
+					line-height:1em;}
+	#main ol li a p{position:absolute;bottom:10px;
+					font-family:'Nanum Myeongjo',serif;}
+	#main ol li a h2 sup{font-size:15px;}
+	
+	.title_04,.title_05{display:none;}
+	
+	/*모바일 태블릿메인*/
+	#tablet-mobile-main{display:none;}
+    
+	/*new*/
+	#main--new{clear:both;width:100%;min-width:1200px;height:850px;}
+	#main--new::after{content:"";display:block;clear:both;}
+	
+	#main--new .new--left{float:left;width:50%;padding:2% 7%;}
+	.new--left h3{font-size:100px;height:100px;
+					line-height:1em;
+					margin-bottom:70px;}
+	.new--left h3 sub{font-size:20px;}
+	.new--left div{width:100%;
+				font-family:'Nanum Myeongjo',serif;
+				margin-bottom:160px;}
+	.new--left div:last-child{margin-bottom:150px;}
+	.new--left div h4{font-size:30px;font-weight:bold;line-height:1em;
+					margin-bottom:35px;}
+	.new--left div p,.new--left div ol{font-size:17px;font-weight:500;line-height:1em}
+	.new--left div ol li{list-style-type:decimal-leading-zero;
+						margin-left:40px;}
+	
+	#main--new ul{float:right;width:50%;height:850px;}
+	#main--new ul li{width:50%;height:425px;float:left;
+					border:2px solid #c7b299;
+					position:relative;
+					transition:all 0.3s ease-in-out;}
+
+	#main--new ul li:nth-child(1){border-right:none;border-bottom:none;background:url(../img/balanced_beige1.png) no-repeat center;background-size:contain;}
+	#main--new ul li:nth-child(2){border-bottom:none;background:url(../img/balanced_gray1.png) no-repeat center;background-size:contain;}
+	#main--new ul li:nth-child(3){border-right:none;background:url(../img/cloud_pillow1.png) no-repeat center;background-size:contain;}
+	
+	#main--new ul li:nth-child(1):hover{background-image:url(../img/balanced_beige2.png)}
+	#main--new ul li:nth-child(2):hover{background-image:url(../img/balanced_gray2.png)}
+	#main--new ul li:nth-child(3):hover{background-image:url(../img/cloud_pillow2.png)}
+
+	#main--new ul li a{width:100%;height:100%;display:block;
+						text-align:center;
+						line-height:100%;}
+	#main--new ul li img{width:100%;height:auto;}
+	#main--new ul li.pillow{clear:both;}
+	#main--new ul li.view-more{width:50%;height:50%;}
+	#main--new ul li.view-more a{line-height:425px;
+								background-color:#dedcd7;
+								font-size:20px;color:#c7b299;
+								font-weight:bold;
+								transition:all 0.3s ease-in;}
+	#main--new ul li .go-to-shopping{width:100%;padding:10% 0;
+									background-color:#806d66;
+									font-weight:bold;color:#ffffff;
+									font-size:17px;
+									position:absolute;
+									left:0;bottom:0;
+									display:none;}
+	#main--new ul li:hover{background-color:#dedcd7;}
+	#main--new ul li:hover .go-to-shopping{display:block;}
+	#main--new ul li.view-more:hover{letter-spacing:1em;}
+	#main--new ul li.view-more:hover a{color:#806d66;}
+	
+	
+	/*review*/
+	#reviews-link{clear:both;
+					white-space:nowrap;overflow:hidden;
+					background-color:#dedcd7;
+					
+					height:50px;
+					border-top:1px solid #c7b299;
+                    border-bottom:1px solid #c7b299;}
+    #reviews-link h4{height:50px;overflow:hidden;}
+	#reviews-link h4 a{height:100%;display:block;
+						font-size:50px;
+						color:#54463e;line-height:50px;
+						transform:translate(0);
+                        animation:flow infinite 10s linear;}
+	#reviews-link:hover{background-color:#806d66;}
+	#reviews-link h4:hover a{color:#ffffff;}
+	
+	/*brandstory*/
+	#brand-story{width:100%;min-width:1200px;overflow:hidden;
+				background:linear-gradient(to bottom,#dedcd7,#ffffff);
+				padding:2%;}
+	#brand-story ol{width:100%;height:auto;}
+	#brand-story li{width:100%;}
+	#brand-story li a{width:100%;height:100%;display:block;}
+	.brand-story-text h5{float:left;clear:both;color:#000000;font-size:95px;letter-spacing:-1px;line-height:100px;}
+	.brand-story-text h5.br-click{animation:click_ani infinite 3s;
+									animation-delay:3s;}
+	
+	.comfort-title{width:450px;}
+	.safe-title{width:240px;}
+	.easy-title{width:260px;}
+	.brand-story-text h5 span{width:20px;height:20px;display:block;
+								float:right;
+								background-color:#000000;color:#ffffff;
+								width:20px;height:20px;
+								letter-spacing:0;
+								font:bold 15px/15px 'Nanum Myeongjo',serif;
+								line-height:20px;text-align:center;
+								border-radius:50%;margin-top:40px;}
+	.brand-story-text p{float:left;text-align:right;
+						width:0;height:55px;
+						overflow:hidden;
+						border-bottom:1px solid #000000;
+						color:#000000;
+						opacity:0;
+						font:bold 2vw/40px 'Nanum Myeongjo',serif;
+						padding-top:0.7%;
+						}/*js*/
+	.comfort-explain{text-indent:20%;}
+	.safe-explain{text-indent:40%;}
+	.easy-explain{text-indent:40%;}
+	
+	
+	
+	#brand-story .more{clear:both;float:left;width:30%;
+						margin-top:40px;
+						background:url(../img/brandstory_arrow.png) no-repeat 250px top;}
+	#brand-story .more a{width:100%;height:100%;display:block;
+						font-size:20px;}
+	#brand-story .more:hover{animation:arrow1 3s infinite;}
+	#brand-story .more:hover a{font-weight:bold;}
+	.brand-story-img{float:right;width:70%;
+					text-align:right;}
+	.brand-story-img img{width:80%;height:auto;transition:all 0.3s ease-in-out;}
+	
+	
+	
+	
+	
+	/*tribe*/
+	#tribe{clear:both;width:100%;min-width:1200px;height:850px;
+			background:url(../img/tribe_bg.jpg) no-repeat 90% 270px;
+			padding:3% 10%;}
+	#tribe .tribe--left{width:40%;}
+	#tribe h6{width:100%;
+				font-size:100px;line-height:1em;
+				margin-bottom:45px;}
+	#tribe p{width:100%;
+			font:bold 18px/1.2em 'Nanum Myeongjo',serif;
+			margin-bottom:130px;}
+	#tribe .more{height:36px;
+				line-height:36px;
+				font-weight:normal;
+				font-size:20px;
+				background:url(../img/tribe_arrow.png) no-repeat 80px top;}
+	#tribe .more a{width:100%;height:36px;display:block;}
+	#tribe .more:hover{animation:arrow2 infinite 3s;}
+	#tribe .more a:hover{font-weight:bold;}
+	
+	
+	/*lab*/
+	#lab{width:100%;min-width:1200px;padding:5%;
+		text-align:center;
+		position:relative;}
+	#lab h6{width:100%;
+			font-size:100px;
+			line-height:100px;text-align:center;
+			margin-bottom:75px;}
+	#lab > a{display:block;margin-bottom:10px;}
+	#lab p.lab-explain{position:absolute;
+						width:100%;padding-left:76%;
+						top:60%;right:0;
+						text-align:left;
+						font:bold 17px/1.2em 'Nanum Myeongjo',serif;}
+	#lab .more{width:100%;text-align:center;}
+	#lab .more a{width:100%;height:100%;display:block;
+				padding-top:90px;
+				font-size:20px;
+				font-weight:normal;
+				text-align:center;text-indent:2px;
+				background:url(../img/lab_arrow.png) no-repeat top center;}
+	#lab .more a:hover{animation:arrow3 infinite 2s linear;font-weight:bold;}
+	
+	/*하단*/
+    
+    #bottom_wrap{width:100%;min-width:1200px;
+				font-family:'Nanum Myeongjo',serif;}
+    #bottom{width:100%;min-width:1200px;
+            background-color:#d9d9d9;}
+    .information{width:100%;min-width:1200px;
+                overflow:hidden;
+                padding:5%;}
+	.information-mobile{display:none;}
+    .customer-center{float:left;width:20%;margin-right:6%;}
+    .company-inquiry{float:left;width:20%;margin-right:8%;}
+    
+    
+    /*공통*/
+    .information .info-title{font-size:20px;font-weight:bold;
+                        height:30px;
+                        border-bottom:1px solid #000000;
+                        margin-bottom:10px;}
+	.more-info{display:none;}
+    .information .info-contact{font-size:20px;line-height:2em;}
+    .company-inquiry .info-contact{line-height:4em;}
+    .information .info-contents{font-size:12px;color:#bbbbbb;
+                                line-height:4em;}
+    .info-contents li{float:left;margin-right:5px;}
+    .info-contents li::after{content:" \00B7";}
+    .info-contents li:last-child{margin-right:0;}
+    .info-contents li:last-child::after{content:"";}
+    .information .info-time{font-size:12px;line-height:2em;clear:both;}
+    
+    .sns{float:left;margin-right:1%;}
+    .sns li{height:50px;line-height:50px;}
+    
+    .address-info{float:right;width:35%;}
+    .address-info address{font-style:normal;
+                            font-size:12px;
+                            margin-bottom:10px;}
+    .address-info p{font-size:12px;margin-bottom:30px;}
+    .btn_wrap p{float:left;
+                padding:2.5%;
+                text-align:center;
+                font-size:11px;
+                font-weight:bold;
+                background-color:#ffffff;
+                margin-right:30px;}
+	.btn_wrap p:last-child{margin-right:0;}
+    
+    .bottom--bottom{clear:both;overflow:hidden;
+                    padding:0.5% 5%;
+                    background-color:#808080;}
+    .bottom--bottom .banner{float:left;}
+    .banner li{float:left;height:26px;
+                line-height:1em;}
+    .bottom--bottom .quick-menu--bottom{float:right;}
+    .quick-menu--bottom li{display:inline-block;
+                            margin-right:10px;
+                            line-height:2em;}
+    .quick-menu--bottom li a{width:100%;height:100%;
+                            display:block;
+                            font-size:11px;}
+    .quick-menu--bottom li a:hover{font-weight:bold;}
+}
+@media all and (max-width:1199px) and (min-width:600px){
+	
+	#wrap{width:100%;min-width:600px;max-width:1199px;height:100%;
+			position:relative;}
+	
+	/*상단*/
+	#top-wrap{position:absolute;top:0;left:0;width:100%;
+			z-index:50;}
+	#top{width:95%;min-width:600px;max-width:1199px;margin:0 auto;}
+	#top h1{float:left;width:125px;height:90px;text-align:center;line-height:140px;}
+	#top h1 img{width:70%;height:auto;}
+	
+	#menu{display:none;}
+	#top #menu-button{float:right;width:75px;height:50px;margin-top:15px;}
+	#menu-button a{width:100%;height:100%;display:block;
+					text-align:center;}
+	#menu-button img{width:70%;height:auto;}
+	
+	#menu-mobile{position:fixed;
+		z-index:25;
+		width:100%;height:100%;min-width:600px;
+		top:0;right:-100%;
+		background-color:#b3a493;}
+	.close_btn{font-size:80px;
+				line-height:100px;text-align:right;
+				margin-right:15px;
+				font-family:Arial,sans-serif;
+				font-weight:normal;}
+	#menu-mobile > ul{padding-left:1%;}
+	#menu-mobile > ul > li{font-size:70px;line-height:100px;}
+	
+	#menu-mobile > ul > li > a .plus_btn{font-size:50px;}
+	
+	#menu-mobile > ul > li > ul{display:none;margin-bottom:20px;}
+	#menu-mobile > ul > li > ul > li{line-height:20px;text-indent:100px;}
+	#menu-mobile > ul > li:nth-child(2) > ul > li{font-family:'Nanum Myeongjo',serif;}
+	#menu-mobile > ul > li > ul > li > a{font-size:20px;line-height:20px;}
+	#menu-mobile > ul > li > ul > li:hover a{font-weight:bold;}
+	
+	
+	
+	
+	#quickmenu-wrap{position:fixed;z-index:20;
+					top:50%;right:20px;
+					transform:translate(0,-50%);}
+	
+	
+	
+	
+	#contents_wrap{width:100%;min-width:600px;max-width:1199px;}
+	
+/*	메인*/
+    #main{display:none;}
+
+	#tablet-mobile-main{width:100%;max-width:1199px;min-width:600px;height:auto;position:relative;}
+	#tablet-mobile-main::after{content:"";display:block;clear:both;}
+	
+	#tablet-mobile-main div{width:100%;min-width:600px;max-width:1199px;
+							overflow:hidden;
+							text-align:center;}
+	
+	#tablet-mobile-main ol{position:absolute;bottom:0;left:0;
+			width:100%;padding:0 2%;
+			margin-bottom:30px;}
+	#tablet-mobile-main ol li{width:100%;height:185px;float:left;
+				margin-right:1%;}
+
+	#tablet-mobile-main ol li:last-child{margin-right:0;}
+	#tablet-mobile-main ol li a{height:185px;display:block;
+								color:#000000;
+								position:relative;}
+	#tablet-mobile-main ol li.main1 a,
+	#tablet-mobile-main ol li.main4 a,
+	#tablet-mobile-main ol li.main5 a{color:#ffffff;}
+	#tablet-mobile-main ol li p{font-family:'Nanum Myeongjo',serif;}
+	
+	
+	
+	#tablet-mobile-main ol li a h2{font-size:45px;font-weight:bold;
+					line-height:0.9em;}
+	#tablet-mobile-main ol li a p{position:absolute;bottom:10px;}
+	#tablet-mobile-main ol li a h2 sup{font-size:15px;}
+	
+	#tablet-mobile-main ol li:not(:first-child){display:none;}/*js*/
+
+    
+	/*new*/
+	#main--new{clear:both;width:100%;min-width:600px;max-width:1199px;height:850px;}
+	#main--new::after{content:"";display:block;clear:both;}
+	
+	#main--new .new--left{width:100%;padding:2%;}
+	.new--left h3{font-size:90px;height:100px;
+					line-height:1em;letter-spacing:-8px;
+					margin-bottom:50px;margin-top:10px;}
+	.new--left h3 sub{font-size:15px;letter-spacing:0;}
+	
+	.new--left div{width:50%;float:left;
+				font-family:'Nanum Myeongjo',serif;
+				margin-bottom:50px;}
+	.new--left div:last-child{margin-bottom:50px;padding-left:5%;}
+	.new--left div h4{font-size:3vw;font-weight:bold;line-height:1em;
+					margin-bottom:35px;}
+	.new--left div p,.new--left div ol{font-size:2vw;font-weight:500;line-height:1em;}
+	.new--left div ol li{list-style-type:decimal-leading-zero;margin-left:7%;}
+	
+	
+	#main--new ul{width:100%;min-width:600px;max-width:1199px;height:850px;}
+	#main--new ul li{float:left;width:50%;height:425px;
+					border:2px solid #c7b299;
+					position:relative;
+					transition:all 0.3s ease-in-out;}
+
+	#main--new ul li:nth-child(1){border-right:none;border-bottom:none;background:url(../img/balanced_beige1.png) no-repeat center;background-size:contain;}
+	#main--new ul li:nth-child(2){border-bottom:none;background:url(../img/balanced_gray1.png) no-repeat center;background-size:contain;}
+	#main--new ul li:nth-child(3){clear:both;border-right:none;background:url(../img/cloud_pillow1.png) no-repeat center;background-size:contain;}
+	
+	#main--new ul li:nth-child(1):hover{background-image:url(../img/balanced_beige2.png)}
+	#main--new ul li:nth-child(2):hover{background-image:url(../img/balanced_gray2.png)}
+	#main--new ul li:nth-child(3):hover{background-image:url(../img/cloud_pillow2.png)}
+
+	#main--new ul li a{width:100%;height:100%;display:block;
+						text-align:center;
+						line-height:100%;}
+	#main--new ul li img{width:100%;height:auto;}
+	#main--new ul li.pillow{clear:both;}
+	#main--new ul li.view-more{width:50%;height:50%;}
+	#main--new ul li.view-more a{line-height:425px;
+								background-color:#dedcd7;
+								font-size:20px;color:#c7b299;
+								font-weight:bold;
+								transition:all 0.3s ease-in;}
+	#main--new ul li .go-to-shopping{width:100%;padding:10% 0;
+									background-color:#806d66;
+									font-weight:bold;color:#ffffff;
+									font-size:17px;
+									position:absolute;
+									left:0;bottom:0;
+									display:none;}
+	#main--new ul li:hover{background-color:#dedcd7;}
+	#main--new ul li:hover .go-to-shopping{display:block;}
+	#main--new ul li.view-more:hover{letter-spacing:1em;}
+	#main--new ul li.view-more:hover a{color:#806d66;}
+	
+	
+	/*review*/
+	#reviews-link{clear:both;width:100%;min-width:600px;max-width:1199px;
+					white-space:nowrap;overflow:hidden;
+					background-color:#dedcd7;
+					
+					height:50px;
+					border-top:1px solid #c7b299;
+                    border-bottom:1px solid #c7b299;}
+    #reviews-link h4{height:50px;overflow:hidden;}
+	#reviews-link h4 a{height:100%;display:block;
+						font-size:50px;
+						color:#54463e;line-height:50px;
+						transform:translate(0);
+                        animation:flow infinite 10s linear;}
+	#reviews-link:hover{background-color:#806d66;}
+	#reviews-link h4:hover a{color:#ffffff;}
+	
+	/*brandstory*/
+	#brand-story{width:100%;min-width:600px;max-width:1199px;overflow:hidden;
+				background:linear-gradient(to bottom,#dedcd7,#ffffff);
+				padding:2%;padding-top:5%;}
+	#brand-story ol{width:100%;overflow:hidden;}
+	#brand-story li{width:100%;}
+	#brand-story li a{width:100%;height:100%;display:block;}
+	.brand-story-text h5{height:90px;
+						float:left;clear:both;
+						color:#000000;
+						font-size:80px;letter-spacing:-2px;line-height:80px;}
+	.brand-story-text h5.br-click{animation:click_ani infinite 3s;
+									animation-delay:3s;}
+	
+	.comfort-title{width:370px;}
+	.safe-title{width:370px;}
+	.easy-title{width:370px;}
+	.brand-story-text h5 span{width:15px;height:15px;display:block;
+								float:left;
+								background-color:#000000;color:#ffffff;
+								font:bold 12px 'Nanum Myeongjo',serif;
+								line-height:16px;text-align:center;
+								border-radius:50%;margin-top:25px;}
+	.brand-story-text p{float:right;text-align:right;
+						width:0;min-width:500px;height:50px;
+						overflow:hidden;
+						color:#000000;
+						opacity:0;
+						font:bold 20px/50px 'Nanum Myeongjo',serif;
+						padding-top:0.7%;
+						margin-left:-5%;}/*js*/
+
+	
+	
+	
+	#brand-story .more{clear:both;width:30%;min-width:350px;
+						margin-top:40px;margin-bottom:40px;
+						background:url(../img/brandstory_arrow.png) no-repeat 250px top;letter-spacing:2px}
+	#brand-story .more a{width:100%;height:100%;display:block;
+						font-size:15px;}
+	#brand-story .more:hover{animation:arrow1 3s infinite;}
+	#brand-story .more:hover a{font-weight:bold;}
+	.brand-story-img{width:100%;}
+	.brand-story-img img{width:100%;height:auto;}
+	
+	
+	
+	
+	
+	/*tribe*/
+	#tribe{clear:both;width:100%;min-width:600px;max-width:1199px;height:850px;
+			background:url(../img/tribe_bg.jpg) no-repeat center bottom;
+			background-size:700px auto;
+			padding:3% 10%;}
+	#tribe .tribe--left{width:100%;min-width:600px;max-width:1199px;}
+	#tribe h6{width:100%;letter-spacing:-9px;
+				font-size:100px;line-height:1em;
+				margin-bottom:45px;margin-top:20px;}
+	#tribe p{width:80%;
+			font:bold 18px/1.2em 'Nanum Myeongjo',serif;
+			margin-bottom:130px;}
+	#tribe .more{height:36px;
+				line-height:36px;
+				font-weight:normal;
+				font-size:20px;
+				background:url(../img/tribe_arrow.png) no-repeat 80px top;}
+	#tribe .more a{width:100%;height:36px;display:block;}
+	#tribe .more:hover{animation:arrow2 infinite 3s;}
+	#tribe .more a:hover{font-weight:bold;}
+	
+	
+	/*lab*/
+	#lab{width:100%;min-width:600px;max-width:1199px;padding:5%;
+		text-align:center;}
+	#lab h6{width:100%;
+			font-size:100px;letter-spacing:-8px;
+			line-height:100px;text-align:center;
+			margin-bottom:75px;margin-top:20px;}
+	#lab > a{display:block;margin-bottom:40px;}
+	#lab > a img{width:100%;height:auto;}
+	#lab p.lab-explain{font:bold 17px/1.2em 'Nanum Myeongjo',serif;
+						margin-bottom:50px;}
+	#lab .more{width:100%;text-align:center;
+				margin-bottom:50px;}
+	#lab .more a{width:100%;height:100%;display:block;
+				padding-top:75px;
+				font-size:20px;
+				font-weight:normal;
+				text-align:center;text-indent:2px;
+				background:url(../img/lab_arrow.png) no-repeat top center;}
+	#lab .more a:hover{animation:arrow3 infinite 2s linear;font-weight:bold;}
+	
+	/*하단*/
+    
+    #bottom_wrap{width:100%;min-width:600px;max-width:1199px;
+				font-family:'Nanum Myeongjo',serif;}
+    #bottom{width:100%;min-width:600px;
+            background-color:#d9d9d9;}
+    .information{width:100%;min-width:600px;
+                padding:5%;}
+	.information-desktop{display:none;}
+    .customer-center{width:100%;}
+    .company-inquiry{width:100%;}
+    
+    
+    /*공통*/
+    .information .info-title{font-size:20px;font-weight:bold;
+                        height:40px;
+						line-height:40px;
+                        border-bottom:1px solid #000000;
+                        margin-bottom:10px;}
+	.more-info{width:40px;height:40px;display:inline-block;
+				float:right;}
+	
+	
+	
+	
+    .information .info-contact{font-size:20px;line-height:2em;display:none;}
+    .company-inquiry .info-contact{line-height:4em;display:none;}
+    .information .info-contents{font-size:12px;color:#bbbbbb;
+                                line-height:4em;display:none;}
+	
+    .info-contents li{float:left;margin-right:5px;}
+    .info-contents li::after{content:" \00B7";}
+    .info-contents li:last-child{margin-right:0;}
+    .info-contents li:last-child::after{content:"";}
+	
+    .information .info-time{clear:both;
+							font-size:15px;line-height:2em;
+							display:none;
+							margin-bottom:20px;}
+    
+    .sns{overflow:hidden;margin-bottom:50px;margin-top:50px;}
+    .sns li{float:left;width:25%;
+			height:50px;line-height:50px;
+			text-align:center;}
+    
+    .address-info{clear:both;width:100%;}
+    .address-info address{font-style:normal;
+                            font-size:15px;
+							line-height:1.5em;
+                            margin-bottom:10px;}
+    .address-info p{display:none;}
+	
+	
+	.btn_wrap p{display:none;}
+    
+    .bottom--bottom{clear:both;
+					width:100%;min-width:600px;max-width:1199px;
+					overflow:hidden;
+                    padding:0.5% 5%;
+                    background-color:#808080;}
+    .bottom--bottom .banner{float:left;}
+    .banner li{float:left;width:15%;height:30px;
+                line-height:40px;}
+	.banner li img{width:100%;height:auto;}
+    .bottom--bottom .quick-menu--bottom{display:none;}
+	
+	
+	
+}
+@media all and (max-width:599px){
+	#wrap{width:100%;min-width:320px;max-width:599px;
+			position:relative;}
+	
+	/*상단*/
+	#top-wrap{position:absolute;top:0;left:0;width:100%;min-width:320px;max-width:599px;
+			z-index:50;}
+	#top{width:95%;margin:0 auto;}
+	#top h1{float:left;width:100px;height:50px;text-align:center;line-height:50px;}
+	#top h1 img{width:60%;height:auto;}
+	
+	
+	#menu{display:none;}
+	#top #menu-button{float:right;margin-top:15px;width:50px;height:35px;}
+	#menu-button a{width:100%;height:100%;display:block;
+					text-align:right;}
+	#menu-button img{width:70%;height:auto;}
+	
+	#menu-mobile{position:fixed;
+		z-index:25;
+		width:100%;height:100%;min-width:320px;
+		top:0;right:-100%;
+		background-color:#b3a493;}
+	.close_btn{font-size:50px;
+				line-height:100px;text-align:right;
+				margin-right:15px;
+				font-family:Arial,sans-serif;
+				font-weight:normal;}
+	#menu-mobile > ul{padding-left:1%;}
+	#menu-mobile > ul > li{font-size:50px;line-height:100px;}
+	
+	#menu-mobile > ul > li > a .plus_btn{font-size:45px;}
+	
+	#menu-mobile > ul > li > ul{display:none;margin-bottom:20px;}
+	#menu-mobile > ul > li > ul > li{line-height:20px;text-indent:100px;}
+	#menu-mobile > ul > li:nth-child(2) > ul > li{font-family:'Nanum Myeongjo',serif;}
+	#menu-mobile > ul > li > ul > li > a{font-size:17px;line-height:20px;}
+	#menu-mobile > ul > li > ul > li:hover a{font-weight:bold;}
+	
+	
+	
+	
+	#quickmenu-wrap{position:fixed;z-index:20;
+					top:50%;right:10px;
+					transform:translate(0,-50%);}
+	#quickmenu-wrap li{width:35px;height:35px;}
+	#quickmenu-wrap li a img{width:35px;height:35px;}
+	
+	
+	
+	
+	#contents_wrap{width:100%;min-width:320px;max-width:599px;}
+	
+/*	메인*/
+    #main{display:none;}
+
+	#tablet-mobile-main{width:100%;max-width:599px;min-width:320px;height:700px;position:relative;}
+	#tablet-mobile-main::after{content:"";display:block;clear:both;}
+	
+	#tablet-mobile-main div{width:100%;min-width:320px;max-width:599px;height:700px;
+							overflow:hidden;
+							text-align:center;}
+	#tablet-mobile-main div img{margin-left:-80%;}
+	#tablet-mobile-main ol{position:absolute;bottom:0;left:0;
+			width:100%;padding:0 2%;
+			margin-bottom:30px;}
+	#tablet-mobile-main ol li{width:100%;height:185px;float:left;
+				margin-right:1%;}
+
+	#tablet-mobile-main ol li:last-child{margin-right:0;}
+	#tablet-mobile-main ol li a{height:185px;display:block;
+								color:#000000;
+								position:relative;}
+	#tablet-mobile-main ol li.main1 a,
+	#tablet-mobile-main ol li.main4 a,
+	#tablet-mobile-main ol li.main5 a{color:#ffffff;}
+	#tablet-mobile-main ol li p{font-family:'Nanum Myeongjo',serif;}
+	
+	
+	
+	#tablet-mobile-main ol li a h2{font-size:40px;font-weight:bold;
+					line-height:0.8em;letter-spacing:-3px;}
+	#tablet-mobile-main ol li a p{position:absolute;bottom:10px;}
+	#tablet-mobile-main ol li a h2 sup{font-size:8px;}
+	
+	#tablet-mobile-main ol li:not(:first-child){display:none;}/*js*/
+
+    
+	/*new*/
+	#main--new{clear:both;width:100%;min-width:320px;max-width:599px;height:700px;}
+	#main--new::after{content:"";display:block;clear:both;}
+	
+	#main--new .new--left{width:100%;padding:2%;}
+	.new--left h3{font-size:90px;height:100px;
+					line-height:1em;letter-spacing:-8px;
+					margin-bottom:40px;margin-top:20px;}
+	.new--left h3 sub{font-size:15px;letter-spacing:0;}
+	
+	.new--left div{width:100%;
+				font-family:'Nanum Myeongjo',serif;
+				margin-bottom:30px;}
+	.new--left div h4{font-size:20px;font-weight:bold;line-height:1em;}
+	.new--left div p{display:none;}
+	.new--left div ol{display:none;}
+	
+	#main--new ul{width:100%;min-width:320px;max-width:599px;height:400px;}
+	#main--new ul li{float:left;width:50%;height:200px;
+					border:2px solid #c7b299;
+					position:relative;
+					transition:all 0.3s ease-in-out;}
+
+	#main--new ul li:nth-child(1){border-right:none;border-bottom:none;background:url(../img/balanced_beige1.png) no-repeat center;background-size:contain;}
+	#main--new ul li:nth-child(2){border-bottom:none;background:url(../img/balanced_gray1.png) no-repeat center;background-size:contain;}
+	#main--new ul li:nth-child(3){clear:both;border-right:none;background:url(../img/cloud_pillow1.png) no-repeat center;background-size:contain;}
+	
+	#main--new ul li:nth-child(1):hover{background-image:url(../img/balanced_beige2.png)}
+	#main--new ul li:nth-child(2):hover{background-image:url(../img/balanced_gray2.png)}
+	#main--new ul li:nth-child(3):hover{background-image:url(../img/cloud_pillow2.png)}
+
+	#main--new ul li a{width:100%;height:100%;display:block;
+						text-align:center;
+						line-height:100%;}
+	#main--new ul li img{width:100%;height:auto;}
+	#main--new ul li.pillow{clear:both;}
+	#main--new ul li.view-more{width:50%;height:200px;}
+	#main--new ul li.view-more a{line-height:200px;
+								background-color:#dedcd7;
+								font-size:20px;color:#c7b299;
+								font-weight:bold;
+								transition:all 0.3s ease-in;}
+	#main--new ul li .go-to-shopping{width:100%;padding:10% 0;
+									background-color:#806d66;
+									font-weight:bold;color:#ffffff;
+									font-size:17px;
+									position:absolute;
+									left:0;bottom:0;
+									display:none;}
+	#main--new ul li:hover{background-color:#dedcd7;}
+	#main--new ul li:hover .go-to-shopping{display:block;}
+	#main--new ul li.view-more:hover{letter-spacing:0.3em;}
+	#main--new ul li.view-more:hover a{color:#806d66;}
+	
+	
+	/*review*/
+	#reviews-link{clear:both;width:100%;min-width:320px;max-width:599px;
+					white-space:nowrap;overflow:hidden;
+					background-color:#dedcd7;
+					height:30px;
+					border-top:1px solid #c7b299;
+                    border-bottom:1px solid #c7b299;}
+    #reviews-link h4{height:30px;overflow:hidden;}
+	#reviews-link h4 a{height:100%;display:block;
+						font-size:30px;
+						color:#54463e;line-height:30px;
+						transform:translate(0);
+                        animation:flow infinite 10s linear;}
+	#reviews-link:hover{background-color:#806d66;}
+	#reviews-link h4:hover a{color:#ffffff;}
+	
+	/*brandstory*/
+	#brand-story{width:100%;min-width:320px;max-width:599px;height:700px;
+				background:linear-gradient(to bottom,#dedcd7,#ffffff);
+				padding:2%;padding-top:5%;
+				position:relative;}
+	#brand-story ol{width:100%;}
+	#brand-story li{width:100%;}
+	#brand-story li a{width:100%;height:100%;display:block;}
+	.brand-story-text h5{float:left;clear:both;
+						height:90px;
+						color:#000000;letter-spacing:-3px;
+						font-size:70px;line-height:80px;}
+	.brand-story-text h5.br-click{animation:click_ani infinite 3s;
+									animation-delay:3s;}
+	
+
+	.brand-story-text h5 span{width:15px;height:15px;display:block;
+								float:left;
+								background-color:#000000;color:#ffffff;
+								font:bold 12px 'Nanum Myeongjo',serif;
+								line-height:16px;text-align:center;
+								letter-spacing:0;
+								border-radius:50%;margin-top:25px;}
+	.brand-story-text p{float:right;text-align:right;
+						display:none;
+						width:0;min-width:500px;height:50px;
+						overflow:hidden;
+						color:#000000;
+						opacity:0;
+						font:bold 4.5vw/50px 'Nanum Myeongjo',serif;
+						padding-top:0.7%;
+						margin-left:-5%;margin-bottom:40px;}/*js*/
+
+	
+	
+	
+	#brand-story .more{clear:both;position:absolute;
+						bottom:100px;right:0;
+						width:250px;
+						background:url(../img/brandstory_arrow.png) no-repeat 200px top;}
+	#brand-story .more a{width:100%;height:100%;display:block;
+						font-size:15px;}
+	
+	#brand-story .more:hover a{font-weight:bold;}
+	.brand-story-img{width:100%;margin-top:300px;}
+	.brand-story-img img{width:100%;height:auto;}
+	
+	
+	
+	
+	
+	/*tribe*/
+	#tribe{clear:both;width:100%;min-width:320px;max-width:599px;height:700px;
+			background:url(../img/tribe_bg.jpg) no-repeat center 250px;
+			background-size:700px auto;
+			padding:3% 10%;
+			margin-bottom:30px;}
+	#tribe .tribe--left{width:100%;min-width:320px;max-width:599px;}
+	#tribe h6{width:100%;
+				font-size:90px;line-height:1em;letter-spacing:-8px;
+				margin-bottom:10px;}
+	#tribe p{width:100%;
+			font:bold 17px/1.2em 'Nanum Myeongjo',serif;
+			margin-bottom:30px;
+			color:#000000;}
+	#tribe .more{font-weight:normal;
+				line-height:35px;
+				font-size:15px;
+				background:url(../img/tribe_arrow.png) no-repeat right top;}
+	#tribe .more a{width:100%;height:36px;display:block;color:#000000;}
+	#tribe .more a:hover{font-weight:bold;}
+	
+	
+	/*lab*/
+	#lab{width:100%;min-width:320px;max-width:599px;padding:5%;
+		text-align:center;}
+	#lab h6{width:100%;
+			font-size:90px;
+			line-height:100px;text-align:center;letter-spacing:-8px;
+			margin-bottom:55px;margin-top:20px;}
+	#lab > a{display:block;margin-bottom:40px;}
+	#lab > a img{width:100%;height:auto;}
+	#lab p.lab-explain{font:bold 17px/1.2em 'Nanum Myeongjo',serif;
+						margin-bottom:50px;}
+	#lab .more{width:100%;text-align:center;
+				margin-bottom:50px;}
+	#lab .more a{width:100%;height:100%;display:block;
+				padding-top:75px;
+				font-size:20px;
+				font-weight:normal;
+				text-align:center;text-indent:2px;
+				background:url(../img/lab_arrow.png) no-repeat top center;}
+	#lab .more a:hover{animation:arrow3 infinite 2s linear;font-weight:bold;}
+	
+	
+	
+	/*하단*/
+    #bottom_wrap{width:100%;min-width:320px;max-width:599px;
+				font-family:'Nanum Myeongjo',serif;}
+    #bottom{width:100%;min-width:320px;
+            background-color:#d9d9d9;}
+    .information{width:100%;min-width:320px;
+                padding:5%;}
+    .information-desktop{display:none;}
+    .customer-center{width:100%;}
+    .company-inquiry{width:100%;}
+    
+    
+   /*공통*/
+    .information .info-title{font-size:20px;font-weight:bold;
+                        height:40px;
+						line-height:40px;
+                        border-bottom:1px solid #000000;
+                        margin-bottom:10px;}
+	.more-info{width:40px;height:40px;display:inline-block;
+				float:right;}
+	
+	
+	
+	
+    .information .info-contact{font-size:20px;line-height:2em;display:none;}
+    .company-inquiry .info-contact{line-height:4em;display:none;}
+    .information .info-contents{font-size:12px;color:#bbbbbb;
+                                line-height:4em;display:none;}
+	
+    .info-contents li{float:left;margin-right:5px;}
+    .info-contents li::after{content:" \00B7";}
+    .info-contents li:last-child{margin-right:0;}
+    .info-contents li:last-child::after{content:"";}
+	
+    .information .info-time{clear:both;
+							font-size:15px;line-height:2em;
+							display:none;
+							margin-bottom:20px;}
+    
+    .sns{overflow:hidden;margin-bottom:50px;margin-top:50px;}
+    .sns li{float:left;width:25%;
+			height:50px;line-height:50px;
+			text-align:center;}
+    
+    .address-info{clear:both;width:100%;}
+    .address-info address{font-style:normal;
+                            font-size:15px;
+							line-height:1.5em;
+                            margin-bottom:10px;}
+    .address-info p{display:none;}
+	
+	
+	.btn_wrap p{display:none;}
+    
+    .bottom--bottom{clear:both;
+					width:100%;min-width:320px;max-width:599px;
+					overflow:hidden;
+                    padding:0.5% 5%;
+                    background-color:#808080;}
+    .bottom--bottom .banner{float:left;}
+    .banner li{float:left;width:15%;height:30px;
+                line-height:40px;}
+	.banner li img{width:100%;height:auto;}
+    .bottom--bottom .quick-menu--bottom{display:none;}
+}
